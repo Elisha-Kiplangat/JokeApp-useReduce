@@ -16,6 +16,7 @@ const Joke = ({ id, joke, rate, updateRate }: JokeProps) => {
       <div className="joke-buttons">
         <button onClick={() => updateRate(id, rate + 1)}>👍</button>
         <button onClick={() => updateRate(id, rate - 1)}>👎</button>
+        {/* <button onClick={() => deleteJoke()}>X</button> */}
       </div>
     </div>
   );

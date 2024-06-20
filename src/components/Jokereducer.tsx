@@ -8,7 +8,8 @@ interface Joke {
 
 type Action =
   | { type: 'ADD_JOKE'; payload: string }
-  | { type: 'UPDATE_RATE'; payload: { id: number; rate: number } };
+  | { type: 'UPDATE_RATE'; payload: { id: number; rate: number } }
+  | { type: 'DELETE_JOKE'; payload: number };
 
 export const jokesReducer = (state: Joke[], action: Action): Joke[] => {
   switch (action.type) {
@@ -23,6 +24,8 @@ export const jokesReducer = (state: Joke[], action: Action): Joke[] => {
       return state.map((joke) =>
         joke.id === action.payload.id ? { ...joke, rate: action.payload.rate } : joke
       );
+    case 'DELETE_JOKE':
+      return state.filter((joke) => joke.id !== action.payload);
     default:
       return state;
   }

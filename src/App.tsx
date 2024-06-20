@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h2>Jokes for you 💀</h2>
+      <h2>Jokes 🤣</h2>
       <form className="form" onSubmit={handleSubmit}>
         <input type="text" placeholder='Add a joke' />
         <button type='submit'>Add Joke</button>
